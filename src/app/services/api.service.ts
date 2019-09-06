@@ -6,5 +6,11 @@ import { Observable } from "rxjs";
   providedIn: "root"
 })
 export class ApiService {
+  emailData: any;
+
   constructor(private http: HttpClient) {}
+
+  getEmailData(): Observable<any> {
+    return this.http.get(`localhost:8000/tests`);
+  }
 }
